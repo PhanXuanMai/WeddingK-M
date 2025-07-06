@@ -1,0 +1,115 @@
+:root {
+    --Web1-pink:#FA97C2;
+    --Web1-blue: #2FA0D5;
+    --Web1-green: #73C926;
+}
+
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+
+}
+h1,h2,h3,h4{
+    font-family:'Change One',cursive;
+    font-weight: 200;
+}
+h1{
+    font-size: 60px;
+    line-height: 60px;
+    font-weight: 900;
+}
+#menu-header a {
+    display: block;
+    padding: 0.125;
+    font-weight: bold;
+    color: black;
+    font-family: 'Changa One',cursive;
+
+}
+#medu-header li.active a{
+    color: var(--Web1-blue)
+}
+#formsearch input{
+    width: 8rem;
+}
+#formsearch i{
+    color: var(--Web1-green);
+}
+/*banner*/
+#banner{
+    background-image: url(../images/bg-banner.gif);
+}
+#banner > div{
+    background: url("../images/logo.png") left-top no-repeat, url("../images/search_bg.png") right-top no-repeat;
+    padding: 5rem 0 3rem 0;
+}
+#banner a {
+    background-color: var(--Web1-blue);
+    font-family: 'Changa One', cursive;
+    font-size: 10rem;
+    }
+#banner .carousel-item{
+    min-height: 15 rem;
+}
+#banner .carousel-indicators li{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 1.2rem;
+    border: none;
+    margin: 0 0.25rem;
+    position: relative;
+}
+#banner .carousel-indicators li span{
+    position: absolute;
+    top: 0.3rem;
+    left: 0.3rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 0.6rem;
+    border: none;
+    background-color:  var(--Web1-green);
+    text-align: left;
+    text-indent: -999999x;
+
+}
+#bannne .carousel-indicators li .active span{
+    background-color: var(--Web1-green);
+
+}
+/*product*/
+.readmor{
+    color: var(--Web1-blue)
+}
+/*about us*/
+#aboutus{
+    background-color: var(--Web1-pink);
+    margin-top: -4px !important;
+
+}
+#formsignup{
+    background-color: var(--Web1-pink);
+    border-color: rgba(0,0,0,0.5)!important;
+}
+#News .date{
+    background-color: var(--Web1-green);
+}
+footer{
+    background-image: url("../images/bg-footer.gif");
+}
+#menu-footer a{
+    color: white;
+    font-weight: bold;
+    font-family: 'Changa One', cursive;
+    display: block;
+    padding: 0 2rem;
+
+}
+#menu-footer a .active{
+    color: var(--Web1-pink)
+}
+/*Menu Login*/
+#formlogin button[type='submit']{
+    background-color:var(--Web1-blue);
+    color:white;
+}
