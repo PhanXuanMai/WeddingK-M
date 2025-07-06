@@ -1,115 +1,314 @@
-:root {
-    --Web1-pink:#FA97C2;
-    --Web1-blue: #2FA0D5;
-    --Web1-green: #73C926;
+body {
+  background: linear-gradient(to top right, #fff4f4, #ffe6e6);
+  font-family: 'Playfair Display', serif;
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 16px;
-    line-height: 20px;
+/* Hero Section */
+.hero h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+}
+.hero {
+  background: url("Picture/My New Project_02.jpg") no-repeat center center/cover;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
 
+/* Section Padding */
+.section {
+  padding: 60px 15px;
 }
-h1,h2,h3,h4{
-    font-family:'Change One',cursive;
-    font-weight: 200;
+.section:nth-of-type(even) {
+  background-color: #fff5f7;
 }
-h1{
-    font-size: 60px;
-    line-height: 60px;
-    font-weight: 900;
+.section:nth-of-type(odd) {
+  background-color: #ffeef0;
 }
-#menu-header a {
-    display: block;
-    padding: 0.125;
-    font-weight: bold;
-    color: black;
-    font-family: 'Changa One',cursive;
 
+/* Gold Text */
+.gold-text {
+  color: #faf9f7;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
-#medu-header li.active a{
-    color: var(--Web1-blue)
-}
-#formsearch input{
-    width: 8rem;
-}
-#formsearch i{
-    color: var(--Web1-green);
-}
-/*banner*/
-#banner{
-    background-image: url(../images/bg-banner.gif);
-}
-#banner > div{
-    background: url("../images/logo.png") left-top no-repeat, url("../images/search_bg.png") right-top no-repeat;
-    padding: 5rem 0 3rem 0;
-}
-#banner a {
-    background-color: var(--Web1-blue);
-    font-family: 'Changa One', cursive;
-    font-size: 10rem;
-    }
-#banner .carousel-item{
-    min-height: 15 rem;
-}
-#banner .carousel-indicators li{
-    width: 1.2rem;
-    height: 1.2rem;
-    border-radius: 1.2rem;
-    border: none;
-    margin: 0 0.25rem;
-    position: relative;
-}
-#banner .carousel-indicators li span{
-    position: absolute;
-    top: 0.3rem;
-    left: 0.3rem;
-    width: 0.6rem;
-    height: 0.6rem;
-    border-radius: 0.6rem;
-    border: none;
-    background-color:  var(--Web1-green);
-    text-align: left;
-    text-indent: -999999x;
 
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
-#bannne .carousel-indicators li .active span{
-    background-color: var(--Web1-green);
+.fade-in {
+  animation: fadeIn 1.5s ease-in;
+}
+.fade-in-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s ease;
+}
+.fade-in-scroll.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+.fade-in-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 1s ease;
+}
+.fade-in-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 1s ease;
+}
+.fade-in-right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease;
+}
+.slide-in-left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+.zoom-in-p {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 1s ease;
+}
+.zoom-in-p.active {
+  opacity: 1;
+  transform: scale(1);
+}
 
+/* Hình ảnh đồng bộ */
+.uniform-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-/*product*/
-.readmor{
-    color: var(--Web1-blue)
+.uniform-img:hover {
+  transform: scale(1.02);
 }
-/*about us*/
-#aboutus{
-    background-color: var(--Web1-pink);
-    margin-top: -4px !important;
 
+/* Thông tin tiệc cưới nền ảnh */
+.info-bg {
+  background: url("Picture/Table.jpg") center center/cover no-repeat;
+  color: white;
+  position: relative;
+  z-index: 1;
+  border-radius: 1rem;
 }
-#formsignup{
-    background-color: var(--Web1-pink);
-    border-color: rgba(0,0,0,0.5)!important;
+.info-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+  border-radius: inherit;
 }
-#News .date{
-    background-color: var(--Web1-green);
+.info-bg > * {
+  position: relative;
+  z-index: 1;
 }
-footer{
-    background-image: url("../images/bg-footer.gif");
-}
-#menu-footer a{
-    color: white;
-    font-weight: bold;
-    font-family: 'Changa One', cursive;
-    display: block;
-    padding: 0 2rem;
 
+/* Footer */
+footer {
+  background-color: #f8f9fa;
+  padding: 30px 0;
+  text-align: center;
 }
-#menu-footer a .active{
-    color: var(--Web1-pink)
+
+/* Thiệp cưới */
+.invitation-section {
+  text-align: center;
+  background-color: #fffaf3;
 }
-/*Menu Login*/
-#formlogin button[type='submit']{
-    background-color:var(--Web1-blue);
-    color:white;
+
+.invitation-images {
+  position: relative;
+  width: 300px;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.invitation-img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+
+.invitation-img:nth-child(1) {
+  top: 0;
+  left: 0;
+  z-index: 2;
+  transform: rotate(-4deg);
+}
+
+.invitation-img:nth-child(2) {
+  top: 15px;
+  left: 40px;
+  z-index: 1;
+  transform: rotate(4deg);
+}
+
+@media (max-width: 768px) {
+  .invitation-images {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+  }
+
+  .invitation-img {
+    position: static;
+    transform: none;
+    width: 80%;
+    margin: 10px 0;
+  }
+}
+
+.section img {
+  display: block;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+}
+/* Áp dụng chung cho ảnh và video */
+.media-item {
+  width: 100%;
+  height: 350px; /* hoặc chiều cao bạn mong muốn */
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+.equal-img {
+  width: 100%;
+  height: 350px; /* hoặc 300px, tuỳ bạn */
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+.equal-img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* Đảm bảo hình ảnh bên trái cùng kích thước */
+.equal-img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+}
+
+/* Container chứa trái tim */
+.heart-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* Trái tim vẽ bằng CSS */
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff69b4;
+  transform: rotate(45deg);
+  opacity: 0.8;
+  animation: floatUp 6s infinite ease-in;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #ff69b4;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: -10px;
+}
+
+/* Các trái tim lệch vị trí và delay */
+.heart:nth-child(1) { left: 10%; animation-delay: 0s; }
+.heart:nth-child(2) { left: 25%; animation-delay: 1s; }
+.heart:nth-child(3) { left: 40%; animation-delay: 2s; }
+.heart:nth-child(4) { left: 55%; animation-delay: 3s; }
+.heart:nth-child(5) { left: 70%; animation-delay: 1.5s; }
+.heart:nth-child(6) { left: 85%; animation-delay: 2.5s; }
+.heart:nth-child(7) { left: 50%; animation-delay: 3.5s; }
+.heart:nth-child(8) { left: 30%; animation-delay: 4.5s; }
+
+/* Hiệu ứng bay lên */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100%) scale(0.8) rotate(45deg);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150%) scale(1.2) rotate(45deg);
+    opacity: 0;
+  }
 }
